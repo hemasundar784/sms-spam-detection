@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        input:hover{
+            background-color: rgb(28, 31, 28);
+        }
+    </style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1 style="color:red;text-shadow: 2px 2px 2px rgba(38,42,43,0.942);">SMS SPAM DETECTOR</h1>
+			<h3 style="color:rgb(115, 245, 9);text-shadow: 2px 2px 2px rgba(38,42,43,0.942);">MACHINE LEARNING APPLICATION</h3>
+		</div>
+	</header>
+
+	<div>
+		{% if prediction == "spam"%}
+			<br>
+			<br>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5CbIoiYKFQ1MVHSClRlNwgOXvPzTd3LMygw&usqp=CAU" alt="spamimage" style="width:210px;height:150px; box-shadow: 5px 5px 10px rgb(183, 89, 89));" />
+			<center><h2 style="color:red;font-size:30px;text-shadow: 2px 2px 5px rgb(0, 0, 0);">SPAM <br><p style="color:yellow;">**it is a unnecessary message**</p></h2></center>
+		{% elif prediction == "ham"%}
+			<br>
+			<br>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRDc2PgsiunaDq-IYd1A-EYx6ghcrm8CHc1eA&usqp=CAU" alt="hamimage" style="width:210px;height:150px; box-shadow: 5px 5px 8px rgba(112, 176, 67, 0.849);" />
+			<center><h2 style="color:aqua;font-size:30px;text-shadow: 2px 2px 2px rgba(38,42,43,0.942);">NOT A SPAM (HAM)</h2></center>
+			<center><h3 style="color:#57ff0f;font-size:30px;text-shadow: 2px 2px 2px rgba(38,42,43,0.942);">$$ it is a good message $$</h3></center>
+		{% else %}
+			<br>
+			<br>
+			<center><h3 style="color:aqua;font-size:30px;">please enter full text messages</h3></center>
+		{% endif %}
+		<br>
+		<form action="{{ url_for('home')}}">
+			<input type="submit" class="box" value="click here for predict another message" style="color:black;background-color:#FFDF00;height:30px;width:300px;cursor:pointer;font-weight:bold;">
+		</form>
+		 <!-- Copyright Symbol and Text -->
+		 <div style="position: fixed; bottom: 10px; right: 10px; font-size: 12px; color: #999;">&copy;hemsun</div>
+	</div>
+</body>
+</html>

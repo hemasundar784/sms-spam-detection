@@ -1,0 +1,35 @@
+body{
+	background-image: url("lastspamimage.jpg");
+	background-repeat:no-repeat;
+	background-size: cover;
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	text-align:center;
+}
+
+container{
+	width:100%;
+	margin: auto;
+
+}
+
+.btn-info{
+	background-color: #2196F3;
+	color:white;
+	height:40px;
+	width:100px;
+	border-radius: 70%;
+	cursor: pointer;}
+.box,.btn-info:hover {
+	padding-left: 2px;
+	background-color:aqua;}
+
+results{
+	border-radius: 15px 50px;
+	border:12px;
+	border-color:blue;
+    background: #345fe4;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
